@@ -69,8 +69,9 @@ public final class RoboticArm {
 		Motor.A.forward();
 		while(!touch.isPressed()) {
 			Motor.A.forward();
-			if(touch.isPressed() || System.currentTimeMillis() - oldTime > 5000) Motor.A.stop();
+			if(touch.isPressed() || System.currentTimeMillis() - oldTime > 1330) break;
 		}
+		Motor.A.stop();
 	}
 	/**
 	 * Open the robotic arm.
