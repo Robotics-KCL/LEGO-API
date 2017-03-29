@@ -146,8 +146,8 @@ public final class RoboticArm {
 	 * Makes the robot go backward for a non-specified amount of time or distance.
 	 */
 	public static void goBackward() {
-		Motor.B.forward();
-		Motor.C.forward();
+		Motor.B.backward();
+		Motor.C.backward();
 	}
 	/**
 	 * Stops the wheels.
