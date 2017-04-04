@@ -13,10 +13,6 @@ import lejos.nxt.TouchSensor;
 import lejos.nxt.LightSensor;
 import lejos.nxt.Sound;
 
-
-
-
-
 public class Kinematics {
 	//Height for Dropping off pot, approx 9
 	//Height for Shelf 1, approx 20
@@ -105,14 +101,15 @@ public class Kinematics {
 		vMotor.stop();
 	}
 	
-	
+	// positive is left
 	
 	/**
 	 * Moves the crane left by rotating the horizontal motor
 	 * @param degrees degrees to turn motor
 	 */
 	public void left(int degrees){
-		if (degrees > 0) 
+		// if it's a negitive number, make it positive
+		if (degrees < 0) 
 			degrees *= -1;
 		hMotor.rotate(degrees);
 	}
@@ -122,6 +119,7 @@ public class Kinematics {
 	 * @param degrees degrees to turn motor
 	 */
 	public void right(int degrees){
+		// if it is a positive number, make it negitive
 		if (degrees > 0) 
 			degrees *= -1;
 		hMotor.rotate(-1 * degrees);
@@ -150,8 +148,6 @@ public class Kinematics {
 		vMotor.stop();
 	}
 
-	
-	
 	/**
 	 * Get sonar reading of height sonar to find height
 	 * @return height(cm)
@@ -159,15 +155,5 @@ public class Kinematics {
 	public int getVSonar(){
 		return vSonar.getDistance();
 	}
-	
-
-	/**
-	 * Returns the value read by the light sensor 
-	 * @return
-	 */
-	public int getValue(){
-		return light.getLightValue();
-	}
-	
 	
 }
