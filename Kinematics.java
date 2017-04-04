@@ -125,7 +125,7 @@ public class Kinematics {
 		// if it is a positive number, make it negitive
 		if (degrees > 0) 
 			degrees *= -1;
-		hMotor.rotate(-1 * degrees);
+		hMotor.rotate(degrees);
 	}
 
 	/**
